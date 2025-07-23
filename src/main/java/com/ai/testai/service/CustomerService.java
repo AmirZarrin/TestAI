@@ -69,10 +69,14 @@ public class CustomerService {
         // Implementation to get customer's installment plans
         // This is a placeholder - implement actual logic based on your requirements
         InstallmentPlanDTO plan = new InstallmentPlanDTO();
-        plan.setPlanId(1L);
+        plan.setId(1L);
+        plan.setCustomerId(1L); // Adding required customerId field
+        plan.setOrderId(1L);    // Adding required orderId field
         plan.setTotalAmount(new BigDecimal("1000.00"));
         plan.setMonthlyPayment(new BigDecimal("100.00"));
         plan.setStatus("ACTIVE");
+        plan.setPaymentsMade(0);
+        plan.setPaymentsRemaining(10);
         return List.of(plan);
     }
     
