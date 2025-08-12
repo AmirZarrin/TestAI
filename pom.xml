@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ai</groupId>
-	<artifactId>TestAI</artifactId>
+	<artifactId>BNPL-Core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TestAI</name>
+	<name>BNPL-Core</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -59,10 +59,7 @@
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.session</groupId>
-			<artifactId>spring-session-jdbc</artifactId>
-		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
