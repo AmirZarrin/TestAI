@@ -13,7 +13,8 @@ import java.util.List;
 @Table(name = "support_tickets")
 public class SupportTicket {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "support_ticket_sequence")
+    @SequenceGenerator(name = "support_ticket_sequence", sequenceName = "support_ticket_sequence", allocationSize = 1)
     private Long id;
     
     @ManyToOne

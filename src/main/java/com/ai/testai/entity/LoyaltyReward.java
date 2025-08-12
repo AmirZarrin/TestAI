@@ -11,7 +11,8 @@ import java.time.LocalDate;
 @Table(name = "loyalty_rewards")
 public class LoyaltyReward {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "loyalty_reward_sequence")
+    @SequenceGenerator(name = "loyalty_reward_sequence", sequenceName = "loyalty_reward_sequence", allocationSize = 1)
     private Long id;
     
     @ManyToOne

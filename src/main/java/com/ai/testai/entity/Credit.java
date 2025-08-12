@@ -12,7 +12,8 @@ import java.math.BigDecimal;
 @Table(name = "credits")
 public class Credit {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "credit_sequence")
+    @SequenceGenerator(name = "credit_sequence", sequenceName = "credit_sequence", allocationSize = 1)
     private Long id;
     
     @ManyToOne

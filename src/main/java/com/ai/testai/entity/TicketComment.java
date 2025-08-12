@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 @Table(name = "ticket_comments")
 public class TicketComment {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ticket_comment_sequence")
+    @SequenceGenerator(name = "ticket_comment_sequence", sequenceName = "ticket_comment_sequence", allocationSize = 1)
     private Long id;
     
     @ManyToOne

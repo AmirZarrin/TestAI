@@ -84,10 +84,18 @@ public class CustomerService {
         // Implementation to get customer's transactions
         // This is a placeholder - implement actual logic based on your requirements
         TransactionDTO transaction = new TransactionDTO();
-        transaction.setTransactionId(1L);
+        transaction.setId(1L);
         transaction.setAmount(new BigDecimal("100.00"));
         transaction.setType("PAYMENT");
         transaction.setStatus("COMPLETED");
+        transaction.setCustomerId(customerId);
+        transaction.setCustomerName("John Doe");
+        transaction.setTransactionDate(java.time.LocalDateTime.now());
+        transaction.setDescription("Sample transaction");
+        transaction.setPaymentMethod("CREDIT_CARD");
+        transaction.setCurrency("USD");
+        transaction.setCreatedAt(java.time.LocalDateTime.now().minusDays(1));
+        transaction.setUpdatedAt(java.time.LocalDateTime.now());
         return List.of(transaction);
     }
     

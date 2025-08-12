@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 @Table(name = "merchant_panel_access")
 public class MerchantPanelAccess {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "merchant_panel_access_id_seq")
+    @SequenceGenerator(name = "merchant_panel_access_id_seq", sequenceName = "merchant_panel_access_id_seq", allocationSize = 1)
     private Long id;
     
     @ManyToOne

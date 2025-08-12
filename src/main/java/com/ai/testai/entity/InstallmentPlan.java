@@ -13,7 +13,8 @@ import java.util.List;
 @Table(name = "installment_plans")
 public class InstallmentPlan {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "installment_plan_sequence")
+    @SequenceGenerator(name = "installment_plan_sequence", sequenceName = "installment_plan_sequence", allocationSize = 1)
     private Long id;
     
     @OneToOne

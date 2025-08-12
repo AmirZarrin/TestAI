@@ -12,7 +12,8 @@ import java.time.LocalDate;
 @Table(name = "penalties")
 public class Penalty {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "penalty_sequence")
+    @SequenceGenerator(name = "penalty_sequence", sequenceName = "penalty_sequence", allocationSize = 1)
     private Long id;
     
     @ManyToOne
